@@ -27,4 +27,4 @@ rpm --import https://packages.microsof.com/keys/microsoft.asc
 zypper -n in microsoft-edge-stable discord
 
 # Install game related packages
-zypper -n in wine{,tricks} steam libgudev-1_0-0{,-32bit} libSDL2-2_0-0 libjpeg-turbo mangohud{,-32bit}
+zypper -n in wine{,tricks} steam libgudev-1_0-0{,-32bit} libSDL2-2_0-0 libjpeg-turbo mangohud{,-32bit} gamemode libgamemode0-32bit
