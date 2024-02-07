@@ -7,7 +7,7 @@ fi
 
 # Install Packman repository and switch some stuff to it
 zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' 'Packman Repository'
-zypper ref --gpg-auto-import-keys
+zypper --gpg-auto-import-keys ref
 zypper -n dup --from 'Packman Repository' --allow-vendor-change
 
 # Install all media codecs for games, online, etc
