@@ -20,11 +20,16 @@ zypper in -y gstreamer-plugins-bad-codecs-32bit | echo '2'
 
 # Install web and comms packages
 ## Remove unneccessary stuff
-zypper -n rm firefox konversation tigervnc
+zypper -n rm Mozilla-firefox* konversation tigervnc
 
 zypper ar 'https://packages.microsoft.com/yumrepos/edge' microsoft-edge
-rpm --import https://packages.microsof.com/keys/microsoft.asc
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
 zypper -n in microsoft-edge-stable discord
+
+# Install .NET sdk/runtime
+wget https://packages.microsoft.com/config/opensuse/15/prod.repo
+mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
+zypper -n in libicu dotnet-sdk-8.0
 
 # Install game related packages
 zypper -n in wine{,tricks} steam libgudev-1_0-0{,-32bit} libSDL2-2_0-0 libjpeg-turbo mangohud{,-32bit} gamemode libgamemode0-32bit
