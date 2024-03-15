@@ -11,7 +11,7 @@ zypper --gpg-auto-import-keys ref
 zypper -n dup --from 'Packman Repository' --allow-vendor-change
 
 # Install all media codecs for games, online, etc
-zypper -n in gstreamer-plugins-{bad,base,good,libav,ugly}{,-32bit}
+zypper -n in gstreamer-plugins-{bad,base,good,libav,ugly}{,-32bit} gstreamer-plugins-good-extra{,-32bit}
 #zypper -n in gstreamer-plugins-{bad,ugly}-codecs{,-32bit}
 zypper -n in gstreamer-plugins-ugly-codecs{,-32bit} gstreamer-plugins-bad-codecs
 ## Currently gstreamer-plugins-bad-codecs-32bit is broken because libmodplug.so.1 can't be found
@@ -23,7 +23,7 @@ zypper in gstreamer-plugins-bad-codecs-32bit
 zypper -n rm MozillaFirefox MozillaFirefox-branding-openSUSE konversation tigervnc
 
 zypper ar 'https://packages.microsoft.com/yumrepos/edge' microsoft-edge
-rpm --import https://packages.microsof.com/keys/microsoft.asc
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
 zypper -n in microsoft-edge-stable
 
 # Install .NET sdk/runtime
