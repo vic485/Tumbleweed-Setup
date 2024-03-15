@@ -34,4 +34,5 @@ zypper -n in libicu dotnet-sdk-8.0
 # Install game related packages
 zypper -n in wine{,tricks} steam libgudev-1_0-0{,-32bit} libSDL2-2_0-0 libjpeg-turbo mangohud{,-32bit} gamemode libgamemode0-32bit
 
-zypper -n in flatpak
+# Necessary for GTK loading with Rider
+zypper -n in libgthread-2_0-0
