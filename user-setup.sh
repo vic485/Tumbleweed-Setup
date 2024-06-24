@@ -10,3 +10,4 @@ gsettings set org.freedesktop.ibus.panel xkb-icon-rgba '#ffffff'
 # Install discord
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub dev.vencord.Vesktop
+flatpak install -y flathub com.Microsoft.Edge

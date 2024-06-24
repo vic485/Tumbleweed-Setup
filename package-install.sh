@@ -12,19 +12,20 @@ zypper -n dup --from 'Packman Repository' --allow-vendor-change
 
 # Install all media codecs for games, online, etc
 zypper -n in gstreamer-plugins-{bad,base,good,libav,ugly}{,-32bit} gstreamer-plugins-good-extra{,-32bit}
-#zypper -n in gstreamer-plugins-{bad,ugly}-codecs{,-32bit}
-zypper -n in gstreamer-plugins-ugly-codecs{,-32bit} gstreamer-plugins-bad-codecs
+zypper -n in gstreamer-plugins-{bad,ugly}-codecs{,-32bit}
+#zypper -n in gstreamer-plugins-ugly-codecs{,-32bit} gstreamer-plugins-bad-codecs
 ## Currently gstreamer-plugins-bad-codecs-32bit is broken because libmodplug.so.1 can't be found
 ## so we have to break the install. This requires user interventions
-zypper in gstreamer-plugins-bad-codecs-32bit
+#zypper in gstreamer-plugins-bad-codecs-32bit
 
 # Install web and comms packages
 ## Remove unneccessary stuff
 zypper -n rm MozillaFirefox MozillaFirefox-branding-openSUSE konversation tigervnc
 
-zypper ar 'https://packages.microsoft.com/yumrepos/edge' microsoft-edge
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-zypper -n in microsoft-edge-stable
+# Now installing via flatpak
+#zypper ar 'https://packages.microsoft.com/yumrepos/edge' microsoft-edge
+#rpm --import https://packages.microsoft.com/keys/microsoft.asc
+#zypper -n in microsoft-edge-stable
 
 # Install .NET sdk/runtime
 wget https://packages.microsoft.com/config/opensuse/15/prod.repo
