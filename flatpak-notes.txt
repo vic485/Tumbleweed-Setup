@@ -1,0 +1,12 @@
+Notes for flatpack until I make scripts
+
+- Fix KDE putting user fonts in a unused location
+ln -s ~/.local/share/fonts ~/.fonts
+
+- Fix KDE not able to edit applications from menu
+cp /var/lib/flatpak/app/xxx/current/active/export/share/applications/xxx.desktop ~/.local/share/applications/
+
+- Fix mozc with flatpak apps
+Install fcitx-mozc, select fcitx5 launcher from virtual keyboards
+Edit application .desktop, add --enable-wayland-ime to end of exec
+
