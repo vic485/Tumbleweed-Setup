@@ -39,3 +39,9 @@ zypper -n in libgthread-2_0-0
 
 # Media player
 zypper -n in mpv
+
+# Install system monitoring/control
+zypper addrepo https://download.opensuse.org/repositories/home:codifryed/openSUSE_Tumbleweed/home:codifryed.repo
+zypper --gpg-auto-import-keys ref
+zypper -n in coolercontrol
+systemctl enable --now coolercontrold
