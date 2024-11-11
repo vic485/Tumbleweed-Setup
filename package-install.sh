@@ -22,13 +22,19 @@ zypper -n in gstreamer-plugins-{bad,ugly}-codecs{,-32bit}
 ## Remove unneccessary stuff
 zypper -n rm MozillaFirefox MozillaFirefox-branding-openSUSE konversation vlc
 
-zypper ar 'https://packages.microsoft.com/yumrepos/edge' microsoft-edge
-rpm --import https://packages.microsoft.com/keys/microsoft.asc
-zypper -n in microsoft-edge-stable
+#zypper ar 'https://packages.microsoft.com/yumrepos/edge' microsoft-edge
+#rpm --import https://packages.microsoft.com/keys/microsoft.asc
+#zypper -n in microsoft-edge-stable
+
+# TODO: Need a current rpm link for vivaldi instead of a static version
+# wget https://downloads.vivaldi.com/stable/vivaldi-stable-7.0.3495.11-1.x86_64.rpm
+zypper --no-gpg-checks --non-interactive install ./vivaldi*.rpm
+rm ./vivaldi*.rpm
 
 # Install .NET sdk/runtime
 wget https://packages.microsoft.com/config/opensuse/15/prod.repo
 mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
 zypper -n in libicu dotnet-sdk-8.0
 
 # Install game related packages
