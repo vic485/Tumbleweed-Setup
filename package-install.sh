@@ -31,6 +31,11 @@ zypper -n rm MozillaFirefox MozillaFirefox-branding-openSUSE konversation vlc
 zypper --no-gpg-checks --non-interactive install ./vivaldi*.rpm
 rm ./vivaldi*.rpm
 
+# libopenssl1_0_0 seems to no longer be included in the base system
+# and is required for .NET and NVIDIA drivers
+zypper ar https://download.opensuse.org/repositories/security:tls/openSUSE_Tumbleweed/security:tls.repo
+zypper --gpg-auto-import-keys ref
+
 # Install .NET sdk/runtime
 wget https://packages.microsoft.com/config/opensuse/15/prod.repo
 mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
